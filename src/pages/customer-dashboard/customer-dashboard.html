@@ -1,0 +1,27 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Welcome {{customer?.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="outer-content">
+  <div padding-top text-center *ngIf="customer">
+    <ion-card>
+      <ion-card-header>
+        Registered Vehicles
+      </ion-card-header>
+
+      <ion-list inset>
+        <button ion-item *ngFor="let vehicle of customer?.vehicles" (click)="itemSelected(vehicle)">
+          <ion-icon name="car" item-start></ion-icon>
+           {{vehicle.vehicleNumber}}
+        </button>
+      </ion-list>
+    </ion-card>
+  </div>
+</ion-content>

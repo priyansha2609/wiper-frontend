@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Vehicle Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="outer-content">
+  <div padding-top text-center *ngIf="vehicle">
+    <ion-list class='has-header'>
+      <ion-item>
+        <ion-label color="primary">Vehicle Id:</ion-label>
+        <ion-input placeholder="Text Input" value="{{vehicle?.vehicleId}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Vehicle Number:</ion-label>
+        <ion-input placeholder="Text Input" value="{{vehicle?.vehicleNumber}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Vehicle Type:</ion-label>
+        <ion-input placeholder="Text Input" value="{{vehicle?.vehicleType.name}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Vehicle Comments:</ion-label>
+        <ion-input placeholder="Text Input" value="{{vehicle?.comments}}"></ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

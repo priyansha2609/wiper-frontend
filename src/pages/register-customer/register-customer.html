@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Create Wiper Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input type="text" #username></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" #password></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Phone No.</ion-label>
+    <ion-input type="number" #phoneNumber></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Correspondance Address</ion-label>
+    <ion-input type="text" #corrAddress></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>State</ion-label>
+    <ion-select [(ngModel)]="state">
+      <ion-option value="telangana">Telangana</ion-option>
+      <ion-option value="bglr">Bangalore</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Area</ion-label>
+    <ion-select [(ngModel)]="area">
+      <ion-option value="gachibowli">Gachibowli</ion-option>
+      <ion-option value="jubliee">Jubliee Hills</ion-option>
+    </ion-select>
+  </ion-item>
+
+</ion-list>
+
+<div padding>
+  <button block ion-button (click)="registerUser()" item-left>Register</button>
+</div>
+
+</ion-content>
