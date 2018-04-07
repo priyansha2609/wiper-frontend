@@ -11,7 +11,7 @@
   <ion-list>
 
   <ion-item>
-    <ion-label floating>Username</ion-label>
+    <ion-label floating>Username/Email</ion-label>
     <ion-input type="text" #username></ion-input>
   </ion-item>
 
@@ -26,25 +26,33 @@
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Correspondance Address</ion-label>
-    <ion-input type="text" #corrAddress></ion-input>
+    <ion-label floating>Enter Address</ion-label>
+    <ion-input id="txtHome" type="text"></ion-input>
+  </ion-item>
+
+  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom" style="height:150px">
+    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  </agm-map>
+
+  <ion-item>
+    <ion-label floating>Street</ion-label>
+    <ion-input type="text" #sublocality_level_2></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label>State</ion-label>
-    <ion-select [(ngModel)]="state">
-      <ion-option value="telangana">Telangana</ion-option>
-      <ion-option value="bglr">Bangalore</ion-option>
-    </ion-select>
+    <ion-label floating>Area</ion-label>
+    <ion-input type="text" #sublocality_level_1></ion-input>
   </ion-item>
 
 
   <ion-item>
-    <ion-label>Area</ion-label>
-    <ion-select [(ngModel)]="area">
-      <ion-option value="gachibowli">Gachibowli</ion-option>
-      <ion-option value="jubliee">Jubliee Hills</ion-option>
-    </ion-select>
+    <ion-label floating>City</ion-label>
+    <ion-input type="text" #locality></ion-input>
+  </ion-item>
+
+  <ion-item hidden>
+    <ion-label floating>Zip Code</ion-label>
+    <ion-input type="text" #postal_code></ion-input>
   </ion-item>
 
 </ion-list>

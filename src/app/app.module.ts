@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { Geolocation } from '@ionic-native/geolocation';
 import { HttpModule } from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -11,8 +12,11 @@ import { LoginPage } from '../pages/login/login';
 import { CustomerDashboardPage } from '../pages/customer-dashboard/customer-dashboard';
 import { RegisterCustomerPage } from '../pages/register-customer/register-customer';
 import { VehicleDetailPage } from '../pages/vehicle-detail/vehicle-detail';
+import { TabsPage } from '../pages/tabs/tabs';
+import { MapsPage } from '../pages/maps/maps';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AgmCoreModule } from '@agm/core';
 
 const firebaseAuth = {
       apiKey: "AIzaSyCkaY1ew3OshdzOxJzlA8B8phpVUL_RTIk",
@@ -30,14 +34,20 @@ const firebaseAuth = {
     LoginPage,
     RegisterCustomerPage,
     CustomerDashboardPage,
-    VehicleDetailPage
+    VehicleDetailPage,
+    TabsPage,
+    MapsPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseAuth),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AgmCoreModule.forRoot({
+         apiKey: "AIzaSyCnahpwY4LRTYlzEHnER3B_Y8NR1HzmrVE",
+         libraries: ["places"]
+     })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,12 +56,15 @@ const firebaseAuth = {
     LoginPage,
     RegisterCustomerPage,
     CustomerDashboardPage,
-    VehicleDetailPage
+    VehicleDetailPage,
+    TabsPage,
+    MapsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Geolocation
   ]
 })
 export class AppModule {}

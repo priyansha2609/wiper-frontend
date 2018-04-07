@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="app">
+    <ion-title>
+      Auto Complete
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+        <ion-label floating>Enter Address</ion-label>
+        <ion-input id="txtHome" type="text"></ion-input>
+    </ion-item>
+
+  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom" style="height:300px">
+    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  </agm-map>
+
+  <!-- <reverse-geocode [latitude]="latitude" [longitude]="longitude"></reverse-geocode> -->
+</ion-content>
