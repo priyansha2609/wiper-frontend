@@ -38,6 +38,9 @@ export class LoginPage {
   signInUser() {
     this.fire.auth.signInWithEmailAndPassword(this.user.value, this.password.value)
     .then( data => {
+
+      console.log("data");
+      console.log(data);
       console.log('got some data', this.fire.auth.currentUser);
       this.alert('Success! You\'re logged in');
       this.navCtrl.setRoot( CustomerDashboardPage );

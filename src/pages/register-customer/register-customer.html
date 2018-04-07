@@ -40,11 +40,16 @@
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Area</ion-label>
+<ion-label floating>Area</ion-label>
     <ion-input type="text" #sublocality_level_1></ion-input>
   </ion-item>
 
-
+  <!-- <ion-label>State</ion-label>
+  <ion-select>
+    <ion-option *ngFor="let city of cities">
+      {{city.name}}
+    </ion-option>
+  </ion-select> -->
   <ion-item>
     <ion-label floating>City</ion-label>
     <ion-input type="text" #locality></ion-input>
@@ -54,6 +59,14 @@
     <ion-label floating>Zip Code</ion-label>
     <ion-input type="text" #postal_code></ion-input>
   </ion-item>
+
+  <!-- <ion-label>Area</ion-label>
+  <ion-select >
+    <ion-option *ngFor="let area of areas"
+        value={{area.areaId}}>
+       {{area.name}}
+     </ion-option>
+  </ion-select> -->
 
 </ion-list>
 

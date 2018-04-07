@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
 import { LoginPage } from '../login/login';
+// import { LoginPhonePage } from '../login-phone/login-phone';
+
 import { RegisterCustomerPage } from '../register-customer/register-customer';
 
 @Component({
