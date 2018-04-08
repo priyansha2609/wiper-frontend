@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Customer } from '../../app/Domain/customer';
 import { correspondenceAddress } from '../../app/Domain/correspondenceAddress';
+import { Area } from '../../app/Domain/area';
+import { City } from '../../app/Domain/city';
 import {Observable} from 'rxjs/Observable';
 import { Http } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
@@ -35,6 +37,9 @@ export class RegisterCustomerTestPage {
 
   customer =  new Customer();
   correspondenceAddress =  new correspondenceAddress();
+  city = new City();
+  area = new Area();
+
 	@ViewChild('password') password;
   // @ViewChild('phoneNumber') phoneNumber;
   // @ViewChild('sublocality_level_2') sublocality_level_2;
@@ -117,14 +122,18 @@ export class RegisterCustomerTestPage {
                         if(addressType === "postal_code"){
                           this.correspondenceAddress.pin = val;
                         }
-                        // if(addressType === "locality"){
-                        //   this.locality.value = val;
-                        // }
-                        // if(addressType === "sublocality_level_2"){
-                        //   this.sublocality_level_2.value = val;
-                        // }
+                         if(addressType === "locality"){
+                           this.city.name = val;
+                         }
+                         if(addressType === "sublocality_level_1"){
+                           this.area.name = val;
+                         }
                       }
                   }
+                  this.area.areaId = 1;
+                  this.city.cityId = 1;
+                  this.correspondenceAddress.city = this.city;
+                  this.correspondenceAddress.area = this.area;
                   this.customer.correspondenceAddress = this.correspondenceAddress;
                   //verify result
                   if (place.geometry === undefined || place.geometry === null) {
@@ -173,7 +182,11 @@ export class RegisterCustomerTestPage {
                 .subscribe(
    (data) => {console.log("success"); console.log('got data ', data);
    this.alert('Registered!');}, // Reach here if res.status >= 200 && <= 299
-   (err) => console.log("failed"));
+   (err) => {console.log("failed");
+
+   console.log(err._body);
+   let message = JSON.parse(err._body);
+   this.alert(message.message);});
 
     //  console.log(customerPromise);
 

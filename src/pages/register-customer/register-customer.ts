@@ -77,11 +77,11 @@ export class RegisterCustomerPage {
           // let defaultBounds = new google.maps.LatLngBounds
           //                       (new LatLng(23.63936, 68.14712),
           //                        new LatLng(28.20453, 97.34466));
-          let options = {
-              bounds : defaultBounds,
-              type :["address"]
-          };
-          let autocomplete = new google.maps.places.Autocomplete(nativeHomeInputBox, options);
+          // let options = {
+          //     bounds : defaultBounds,
+          //     type :["address"]
+          // };
+          let autocomplete = new google.maps.places.Autocomplete(nativeHomeInputBox);
           autocomplete.addListener("place_changed", () => {
               this.ngZone.run(() => {
                   //get the place result

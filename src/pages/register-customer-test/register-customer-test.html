@@ -46,6 +46,14 @@
     <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
   </agm-map>
 
+  <ion-item>
+    <ion-label floating>City</ion-label>
+    <ion-input type="text" [(ngModel)]="city.name"></ion-input>
+  </ion-item>
+  <ion-item>
+<ion-label floating>Area</ion-label>
+    <ion-input type="text" [(ngModel)]="area.name"></ion-input>
+  </ion-item>
 
   <ion-item>
 <ion-label floating>Pin</ion-label>
