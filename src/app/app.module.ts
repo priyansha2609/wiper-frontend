@@ -12,6 +12,7 @@ import { LoginPage } from '../pages/login/login';
 // import { LoginPhonePage } from '../pages/login-phone/login-phone';
 import { CustomerDashboardPage } from '../pages/customer-dashboard/customer-dashboard';
 import { RegisterCustomerPage } from '../pages/register-customer/register-customer';
+import { RegisterCustomerTestPage } from '../pages/register-customer-test/register-customer-test';
 import { VehicleDetailPage } from '../pages/vehicle-detail/vehicle-detail';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MapsPage } from '../pages/maps/maps';
@@ -37,6 +38,7 @@ const firebaseAuth = {
     HomePage,
     LoginPage,
     RegisterCustomerPage,
+    RegisterCustomerTestPage,
     CustomerDashboardPage,
     VehicleDetailPage,
     TabsPage,
@@ -60,6 +62,7 @@ const firebaseAuth = {
     HomePage,
     LoginPage,
     RegisterCustomerPage,
+    RegisterCustomerTestPage,
     CustomerDashboardPage,
     VehicleDetailPage,
     TabsPage,

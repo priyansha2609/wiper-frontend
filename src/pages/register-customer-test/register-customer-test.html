@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Create Wiper Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+  <ion-item>
+    <ion-label floating>Username/Email</ion-label>
+    <ion-input type="text" [(ngModel)]="customer.name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>AdhaarNumber</ion-label>
+    <ion-input type="text" [(ngModel)]="customer.aadharNumber"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" #password></ion-input>
+  </ion-item>
+<!--
+  <ion-item>
+    <ion-label floating>Phone No.</ion-label>
+    <ion-input type="number" #phoneNumber></ion-input>
+  </ion-item>
+
+
+
+
+  <ion-item>
+    <ion-label floating>Street</ion-label>
+    <ion-input type="text" #sublocality_level_2></ion-input>
+  </ion-item> -->
+
+  <ion-item>
+    <ion-label floating>Enter Address</ion-label>
+    <ion-input id="txtHome" type="text"></ion-input>
+  </ion-item>
+
+  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom" style="height:150px">
+    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  </agm-map>
+
+
+  <ion-item>
+<ion-label floating>Pin</ion-label>
+    <ion-input type="text"  [(ngModel)]="correspondenceAddress.pin"></ion-input>
+  </ion-item>
+
+
+
+  <!-- <ion-label>State</ion-label>
+  <ion-select>
+    <ion-option *ngFor="let city of cities">
+      {{city.name}}
+    </ion-option>
+  </ion-select> -->
+  <!-- <ion-item>
+    <ion-label floating>City</ion-label>
+    <ion-input type="text" #locality></ion-input>
+  </ion-item>
+
+  <ion-item hidden>
+    <ion-label floating>Zip Code</ion-label>
+    <ion-input type="text" #postal_code></ion-input>
+  </ion-item> -->
+
+  <!-- <ion-label>Area</ion-label>
+  <ion-select >
+    <ion-option *ngFor="let area of areas"
+        value={{area.areaId}}>
+       {{area.name}}
+     </ion-option>
+  </ion-select> -->
+
+</ion-list>
+
+<div padding>
+  <button block ion-button (click)="registerUser()" item-left>Register</button>
+</div>
+
+</ion-content>

@@ -4,7 +4,7 @@ import { NavController, AlertController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 // import { LoginPhonePage } from '../login-phone/login-phone';
 
-import { RegisterCustomerPage } from '../register-customer/register-customer';
+import { RegisterCustomerTestPage } from '../register-customer-test/register-customer-test';
 
 @Component({
   selector: 'page-home',
@@ -21,7 +21,7 @@ export class HomePage {
   }
 
   register() {
-  	this.navCtrl.push(RegisterCustomerPage);
+  	this.navCtrl.push(RegisterCustomerTestPage);
   }
 
 
