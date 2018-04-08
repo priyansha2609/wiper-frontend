@@ -1,17 +1,10 @@
 import { Component, ViewChild, NgZone } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-
 import {FormControl} from "@angular/forms";
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
 import { AgmMap } from '@agm/core';
-
-// import { Http,Response } from '@angular/http';
-// import { Observable } from 'rxjs/Rx';
-// import { Observable } from 'rxjs/Observable'
-
-
 /**
  * Generated class for the RegisterPage page.
  *
@@ -37,7 +30,6 @@ export class RegisterCustomerPage {
 	@ViewChild('username') user;
 	@ViewChild('password') password;
   @ViewChild('phoneNumber') phoneNumber;
-<<<<<<< Updated upstream
   @ViewChild('sublocality_level_2') sublocality_level_2;
   @ViewChild('sublocality_level_1') sublocality_level_1;
   @ViewChild('locality') locality;
@@ -52,27 +44,6 @@ export class RegisterCustomerPage {
                 this.searchControl = new FormControl();
                 //set current position
                 this.setCurrentPosition();
-
-  // @ViewChild('corrAddress') corrAddress;
-  //
-  // areas : any;
-  // cities : any;
-  //
-  // constructor(private alertCtrl: AlertController, private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-  //
-  //       Observable.forkJoin(
-  //       this.http.get('http://localhost:3000/getAllCities').map((res: Response) => res.json()),
-  //       this.http.get('http://localhost:3000/getAllAreas').map((res: Response) => res.json()))
-  //       .subscribe(
-  //         data => {
-  //             this.cities = data[0];
-  //             this.areas = data[1];
-  //             console.log(this.areas);
-  //             console.log(this.cities);
-  //         },
-  //         err => {
-  //              console.log("Oops!");
-  //          });
   }
 
   ionViewDidLoad() {
@@ -101,9 +72,16 @@ export class RegisterCustomerPage {
       //load Places Autocomplete
       this.mapsAPILoader.load().then(() => {
           let nativeHomeInputBox = document.getElementById('txtHome').getElementsByTagName('input')[0];
-          let autocomplete = new google.maps.places.Autocomplete(nativeHomeInputBox, {
-              types: ["address"]
-          });
+          let defaultBounds = new google.maps.LatLngBounds();
+
+          // let defaultBounds = new google.maps.LatLngBounds
+          //                       (new LatLng(23.63936, 68.14712),
+          //                        new LatLng(28.20453, 97.34466));
+          let options = {
+              bounds : defaultBounds,
+              type :["address"]
+          };
+          let autocomplete = new google.maps.places.Autocomplete(nativeHomeInputBox, options);
           autocomplete.addListener("place_changed", () => {
               this.ngZone.run(() => {
                   //get the place result

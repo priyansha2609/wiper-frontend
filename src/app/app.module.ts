@@ -9,7 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-import { LoginPhonePage } from '../pages/login-phone/login-phone';
+// import { LoginPhonePage } from '../pages/login-phone/login-phone';
 import { CustomerDashboardPage } from '../pages/customer-dashboard/customer-dashboard';
 import { RegisterCustomerPage } from '../pages/register-customer/register-customer';
 import { VehicleDetailPage } from '../pages/vehicle-detail/vehicle-detail';
@@ -17,11 +17,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { MapsPage } from '../pages/maps/maps';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-<<<<<<< Updated upstream
 import { AgmCoreModule } from '@agm/core';
-=======
 import firebase from 'firebase';
->>>>>>> Stashed changes
 
 const firebaseAuth = {
       apiKey: "AIzaSyCkaY1ew3OshdzOxJzlA8B8phpVUL_RTIk",
@@ -44,7 +41,7 @@ const firebaseAuth = {
     VehicleDetailPage,
     TabsPage,
     MapsPage,
-    LoginPhonePage
+    // LoginPhonePage
   ],
   imports: [
     BrowserModule,
@@ -67,7 +64,7 @@ const firebaseAuth = {
     VehicleDetailPage,
     TabsPage,
     MapsPage,
-    LoginPhonePage
+    // LoginPhonePage
   ],
   providers: [
     StatusBar,
